@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.XR;
@@ -27,9 +23,9 @@ namespace ControllerSettingsHelper.HarmonyPatches {
 			if(node != XRNode.LeftHand && node != XRNode.RightHand)
 				return false;
 
-			transform.Rotate(new Vector3(0f, 0f, rotation.z));
+			transform.Rotate(new Vector3(0, 0, rotation.z));
 			transform.Translate(position);
-			transform.Rotate(new Vector3(rotation.x, rotation.y, 0f));
+			transform.Rotate(new Vector3(rotation.x, rotation.y, 0));
 			return false;
 		}
 	}

@@ -5,8 +5,8 @@ using IPA.Config.Stores;
 namespace ControllerSettingsHelper {
 	internal class Config {
 		public static Config Instance { get; set; }
-		public virtual bool EnableAxisArrows { get; set; } = false;
-		public virtual bool EnableAxisArrowsInSong { get; set; } = false;
+		public virtual bool EnableAxisArrowsInMenu { get; set; } = false;
+		public virtual bool EnableAxisArrowsInReplay { get; set; } = false;
 		public virtual bool OverrideControllerOffset { get; set; } = false;
 		public virtual bool MirrorZForLeft { get; set; } = false;
 

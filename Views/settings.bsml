@@ -1,9 +1,9 @@
 ﻿<settings-container>
 	<horizontal horizontal-fit="PreferredSize">
-		<checkbox-setting apply-on-change="true" value="EnableAxisArrows" text="Enable Axis arrows in Menu"/>
+		<checkbox-setting apply-on-change="true" value="EnableAxisArrowsInMenu" text="Enable Axis arrows in Menu"/>
 	</horizontal>
 	<horizontal horizontal-fit="PreferredSize">
-		<checkbox-setting apply-on-change="true" value="EnableAxisArrowsInSong" text="Enable Axis arrows in Replays"/>
+		<checkbox-setting apply-on-change="true" value="EnableAxisArrowsInReplay" text="Enable Axis arrows in Replays"/>
 	</horizontal>
 	<horizontal horizontal-fit="PreferredSize">
 		<checkbox-setting apply-on-change="true" value="OverrideControllerOffset" text="Custom controller settings method"/>
