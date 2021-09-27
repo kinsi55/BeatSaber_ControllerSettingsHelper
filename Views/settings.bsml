@@ -11,4 +11,5 @@
 	<horizontal horizontal-fit="PreferredSize">
 		<checkbox-setting apply-on-change="true" value="MirrorZForLeft" text="Mirror Z rotation for left"/>
 	</horizontal>
+	<text text="More Details: www.git.io/JzHPy"/>
 </settings-container>
