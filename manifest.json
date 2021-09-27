@@ -1,0 +1,13 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/bsmg/BSIPA-MetadataFileSchema/master/Schema.json",
+  "id": "ControllerSettingsHelper",
+  "name": "ControllerSettingsHelper",
+  "author": "Kinsi55",
+  "version": "0.0.1",
+  "description": "",
+  "gameVersion": "1.16.0",
+    "dependsOn": {
+        "BSIPA": "^4.0.5",
+        "BeatSaberMarkupLanguage": "^1.5.3"
+    }
+}
