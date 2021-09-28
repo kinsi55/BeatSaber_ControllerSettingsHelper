@@ -4,6 +4,8 @@ Utility that contains various tools to help you find optimal controller settings
 
 ## Install
 
+Compatible with 1.16 and up
+
 #### Grab [the latest Release](https://github.com/kinsi55/BeatSaber_ControllerSettingsHelper/releases) and drop it into your Plugins folder, thats it
 
 ## Usage

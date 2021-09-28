@@ -3,7 +3,7 @@
   "id": "ControllerSettingsHelper",
   "name": "ControllerSettingsHelper",
   "author": "Kinsi55",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "gameVersion": "1.16.0",
     "dependsOn": {
