@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControllerSettingsHelper", "ControllerSettingsHelper.csproj", "{5E19DD0D-9B09-4E86-8BB5-0E9AB6D8C961}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CEB7D270-B174-49F3-A16D-66479648EDE4}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControllerSettingsHelper", "ControllerSettingsHelper\ControllerSettingsHelper.csproj", "{A31A9B22-7B08-4A30-A589-8855B925BC44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +16,10 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5E19DD0D-9B09-4E86-8BB5-0E9AB6D8C961}.Debug|x64.ActiveCfg = Debug|x64
-		{5E19DD0D-9B09-4E86-8BB5-0E9AB6D8C961}.Debug|x64.Build.0 = Debug|x64
-		{5E19DD0D-9B09-4E86-8BB5-0E9AB6D8C961}.Release|x64.ActiveCfg = Release|x64
-		{5E19DD0D-9B09-4E86-8BB5-0E9AB6D8C961}.Release|x64.Build.0 = Release|x64
+		{A31A9B22-7B08-4A30-A589-8855B925BC44}.Debug|x64.ActiveCfg = Debug|x64
+		{A31A9B22-7B08-4A30-A589-8855B925BC44}.Debug|x64.Build.0 = Debug|x64
+		{A31A9B22-7B08-4A30-A589-8855B925BC44}.Release|x64.ActiveCfg = Release|x64
+		{A31A9B22-7B08-4A30-A589-8855B925BC44}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
