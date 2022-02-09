@@ -1,4 +1,6 @@
-﻿using BeatSaberMarkupLanguage.Settings;
+﻿#nullable enable
+
+using BeatSaberMarkupLanguage.Settings;
 using HarmonyLib;
 using IPA;
 using IPA.Config.Stores;
@@ -11,9 +13,10 @@ using IPALogger = IPA.Logging.Logger;
 namespace ControllerSettingsHelper {
 	[Plugin(RuntimeOptions.SingleStartInit)]
 	public class Plugin {
-		internal static Plugin Instance { get; private set; }
-		internal static IPALogger Log { get; private set; }
-		internal static Harmony harmony { get; private set; }
+		internal static Plugin? Instance { get; private set; }
+		internal static IPALogger? Log { get; private set; }
+		internal static Harmony? harmony { get; private set; }
+		internal SettingReadjuster? callibrator;
 
 		[Init]
 		public void Init(IPALogger logger, IPA.Config.Config conf) {
@@ -29,6 +32,7 @@ namespace ControllerSettingsHelper {
 
 			SceneManager.activeSceneChanged += OnActiveSceneChanged;
 			BSMLSettings.instance.AddSettingsMenu("Controller Helper", "ControllerSettingsHelper.Views.settings.bsml", Config.Instance);
+			callibrator = new SettingReadjuster(Log!);
 		}
 
 		public void OnActiveSceneChanged(Scene oldScene, Scene newScene) {
@@ -66,7 +70,8 @@ namespace ControllerSettingsHelper {
 
 		[OnExit]
 		public void OnApplicationQuit() {
-			harmony.UnpatchSelf();
+			callibrator?.Dispose();
+			harmony?.UnpatchSelf();
 		}
 	}
 }

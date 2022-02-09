@@ -1,0 +1,3 @@
+[submodule "ControllerSettingsHelper.Test/assert.xunit"]
+	path = ControllerSettingsHelper.Test/assert.xunit
+	url = https://github.com/xunit/assert.xunit.git

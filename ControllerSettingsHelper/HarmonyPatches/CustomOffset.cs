@@ -23,9 +23,8 @@ namespace ControllerSettingsHelper.HarmonyPatches {
 			if(node != XRNode.LeftHand && node != XRNode.RightHand)
 				return false;
 
-			transform.Rotate(new Vector3(0, 0, rotation.z));
+			transform.Rotate(rotation);
 			transform.Translate(position);
-			transform.Rotate(new Vector3(rotation.x, rotation.y, 0));
 			return false;
 		}
 	}

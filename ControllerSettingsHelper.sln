@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControllerSettingsHelper", "ControllerSettingsHelper\ControllerSettingsHelper.csproj", "{A31A9B22-7B08-4A30-A589-8855B925BC44}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControllerSettingsHelper.Test", "ControllerSettingsHelper.Test\ControllerSettingsHelper.Test.csproj", "{32386307-BB58-4893-9367-10BD07D051F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -20,6 +22,10 @@ Global
 		{A31A9B22-7B08-4A30-A589-8855B925BC44}.Debug|x64.Build.0 = Debug|x64
 		{A31A9B22-7B08-4A30-A589-8855B925BC44}.Release|x64.ActiveCfg = Release|x64
 		{A31A9B22-7B08-4A30-A589-8855B925BC44}.Release|x64.Build.0 = Release|x64
+		{32386307-BB58-4893-9367-10BD07D051F7}.Debug|x64.ActiveCfg = Debug|x64
+		{32386307-BB58-4893-9367-10BD07D051F7}.Debug|x64.Build.0 = Debug|x64
+		{32386307-BB58-4893-9367-10BD07D051F7}.Release|x64.ActiveCfg = Release|Any CPU
+		{32386307-BB58-4893-9367-10BD07D051F7}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

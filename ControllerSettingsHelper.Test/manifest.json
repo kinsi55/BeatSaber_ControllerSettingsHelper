@@ -1,0 +1,13 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/bsmg/BSIPA-MetadataFileSchema/master/Schema.json",
+  "id": "ControllerSettingsHelper.Test",
+  "name": "ControllerSettingsHelper.Test",
+  "author": "Kinsi55",
+  "version": "1.0.0",
+  "description": "",
+  "gameVersion": "1.17.0",
+  "dependsOn": {
+    "BSIPA": "^4.0.5",
+    "ControllerSettingsHelper": "^1.0.0"
+  }
+}
