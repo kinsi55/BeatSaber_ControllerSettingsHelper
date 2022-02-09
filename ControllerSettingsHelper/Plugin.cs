@@ -13,26 +13,30 @@ using IPALogger = IPA.Logging.Logger;
 namespace ControllerSettingsHelper {
   [Plugin(RuntimeOptions.SingleStartInit)]
   public class Plugin {
-    internal static Plugin? Instance { get; private set; }
-    internal static IPALogger? Log { get; private set; }
-    internal static Harmony? harmony { get; private set; }
-    internal SettingReadjuster? callibrator;
+    private Harmony? _harmony;
+    private IPALogger? _logger;
+    private SettingReadjuster? _adjuster;
 
     [Init]
-    public void Init(IPALogger logger, IPA.Config.Config conf) {
-      Instance = this;
-      Log = logger;
-      Config.Instance = conf.Generated<Config>();
+    public void Init(IPALogger logger, IPA.Config.Config configuration) {
+      _logger = logger;
+      Config.Instance = configuration.Generated<Config>();
     }
 
     [OnStart]
     public void OnApplicationStart() {
-      harmony = new Harmony("Kinsi55.BeatSaber.ControllerSettingsHelper");
-      harmony.PatchAll(Assembly.GetExecutingAssembly());
+      _harmony = new Harmony("Kinsi55.BeatSaber.ControllerSettingsHelper");
+      _harmony.PatchAll(Assembly.GetExecutingAssembly());
 
       SceneManager.activeSceneChanged += OnActiveSceneChanged;
       BSMLSettings.instance.AddSettingsMenu("Controller Helper", "ControllerSettingsHelper.Views.settings.bsml", Config.Instance);
-      callibrator = new SettingReadjuster(Log!);
+      _adjuster = new SettingReadjuster(_logger!);
+    }
+
+    [OnExit]
+    public void OnApplicationQuit() {
+      _adjuster?.Dispose();
+      _harmony?.UnpatchSelf();
     }
 
     public void OnActiveSceneChanged(Scene oldScene, Scene newScene) {
@@ -43,12 +47,13 @@ namespace ControllerSettingsHelper {
         SharedCoroutineStarter.instance.StartCoroutine(SpawnAxis(true));
     }
 
-    IEnumerator SpawnAxis(bool inSong) {
+    private IEnumerator SpawnAxis(bool inSong) {
       yield return 0;
       yield return new WaitForEndOfFrame();
 
-      if (inSong && !Scoresaber.IsInReplay())
+      if (inSong && !Scoresaber.IsInReplay()) {
         yield break;
+      }
 
       foreach (var c in Resources.FindObjectsOfTypeAll<VRController>()) {
         if (c.transform.childCount == 0 || (inSong && c.transform.GetChild(0).GetComponent<Saber>() == null))
@@ -66,12 +71,6 @@ namespace ControllerSettingsHelper {
           AxisDisplay.CreateFor(Color.gray, s, true).Init();
         }
       }
-    }
-
-    [OnExit]
-    public void OnApplicationQuit() {
-      callibrator?.Dispose();
-      harmony?.UnpatchSelf();
     }
   }
 }
