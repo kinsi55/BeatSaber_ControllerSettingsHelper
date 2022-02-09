@@ -1,31 +1,31 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.XR;
 
 namespace ControllerSettingsHelper.HarmonyPatches {
-	[HarmonyPatch]
-	static class CustomOffset {
-		static IEnumerable<MethodBase> TargetMethods() {
-			yield return AccessTools.Method(typeof(OculusVRHelper), nameof(OculusVRHelper.AdjustControllerTransform));
-			yield return AccessTools.Method(typeof(OpenVRHelper), nameof(OpenVRHelper.AdjustControllerTransform));
-		}
+  [HarmonyPatch]
+  static class CustomOffset {
+    static IEnumerable<MethodBase> TargetMethods() {
+      yield return AccessTools.Method(typeof(OculusVRHelper), nameof(OculusVRHelper.AdjustControllerTransform));
+      yield return AccessTools.Method(typeof(OpenVRHelper), nameof(OpenVRHelper.AdjustControllerTransform));
+    }
 
-		[HarmonyPriority(int.MinValue)]
-		static bool Prefix(XRNode node, Transform transform, Vector3 position, ref Vector3 rotation) {
-			if(Config.Instance.MirrorZForLeft && node == XRNode.LeftHand)
-				rotation.z = -rotation.z;
+    [HarmonyPriority(int.MinValue)]
+    static bool Prefix(XRNode node, Transform transform, Vector3 position, ref Vector3 rotation) {
+      if (Config.Instance.MirrorZForLeft && node == XRNode.LeftHand)
+        rotation.z = -rotation.z;
 
-			if(!Config.Instance.OverrideControllerOffset)
-				return true;
+      if (!Config.Instance.OverrideControllerOffset)
+        return true;
 
-			if(node != XRNode.LeftHand && node != XRNode.RightHand)
-				return false;
+      if (node != XRNode.LeftHand && node != XRNode.RightHand)
+        return false;
 
-			transform.Rotate(rotation);
-			transform.Translate(position);
-			return false;
-		}
-	}
+      transform.Rotate(rotation);
+      transform.Translate(position);
+      return false;
+    }
+  }
 }
