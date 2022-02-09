@@ -82,17 +82,18 @@ namespace ControllerSettingsHelper {
       }
     }
 
-    void Update() {
+    public void Update() {
       if (parent != null) {
         transform.position = parent.transform.position;
-        if (!useWorldAngles)
+        if (!useWorldAngles) {
           transform.rotation = parent.transform.rotation;
+        }
       }
 
       for (var i = 0; i < 3; i++)
         arrowTexts[i].transform.rotation = Quaternion.identity;
     }
 
-    void OnDisable() => GameObject.Destroy(gameObject);
+    public void OnDisable() => Destroy(gameObject);
   }
 }

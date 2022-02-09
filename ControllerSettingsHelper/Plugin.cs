@@ -40,11 +40,13 @@ namespace ControllerSettingsHelper {
     }
 
     public void OnActiveSceneChanged(Scene oldScene, Scene newScene) {
-      if (Config.Instance.EnableAxisArrowsInMenu && newScene.name == "MainMenu")
+      if (Config.Instance.EnableAxisArrowsInMenu && newScene.name == "MainMenu") {
         SharedCoroutineStarter.instance.StartCoroutine(SpawnAxis(false));
+      }
 
-      if (Config.Instance.EnableAxisArrowsInReplay && newScene.name == "GameCore")
+      if (Config.Instance.EnableAxisArrowsInReplay && newScene.name == "GameCore") {
         SharedCoroutineStarter.instance.StartCoroutine(SpawnAxis(true));
+      }
     }
 
     private IEnumerator SpawnAxis(bool inSong) {
@@ -56,8 +58,9 @@ namespace ControllerSettingsHelper {
       }
 
       foreach (var c in Resources.FindObjectsOfTypeAll<VRController>()) {
-        if (c.transform.childCount == 0 || (inSong && c.transform.GetChild(0).GetComponent<Saber>() == null))
+        if (c.transform.childCount == 0 || (inSong && c.transform.GetChild(0).GetComponent<Saber>() == null)) {
           continue;
+        }
 
         var s = c.transform.GetChild(0).gameObject;
 
