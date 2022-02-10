@@ -1,15 +1,15 @@
-﻿<settings-container>
-	<horizontal horizontal-fit="PreferredSize">
-		<checkbox-setting apply-on-change="true" value="EnableAxisArrowsInMenu" text="Enable Axis arrows in Menu"/>
-	</horizontal>
-	<horizontal horizontal-fit="PreferredSize">
-		<checkbox-setting apply-on-change="true" value="EnableAxisArrowsInReplay" text="Enable Axis arrows in Replays"/>
-	</horizontal>
-	<horizontal horizontal-fit="PreferredSize">
-		<checkbox-setting apply-on-change="true" value="OverrideControllerOffset" text="Custom controller settings method"/>
-	</horizontal>
-	<horizontal horizontal-fit="PreferredSize">
-		<checkbox-setting apply-on-change="true" value="MirrorZForLeft" text="Mirror Z rotation for left"/>
-	</horizontal>
-	<text text="More Details: www.git.io/JzHPy"/>
+<settings-container>
+  <horizontal horizontal-fit="PreferredSize">
+    <checkbox-setting apply-on-change="true" value="MirrorZForLeft" text="Mirror Z rotation for left"/>
+  </horizontal>
+  <horizontal horizontal-fit="PreferredSize">
+    <checkbox-setting apply-on-change="true" value="EnableAxisArrowsInMenu" text="Enable Axis arrows in Menu"/>
+  </horizontal>
+  <horizontal horizontal-fit="PreferredSize">
+    <checkbox-setting apply-on-change="true" value="EnableAxisArrowsInPlay" text="Enable Axis arrows in Play"/>
+  </horizontal>
+  <horizontal horizontal-fit="PreferredSize">
+    <checkbox-setting apply-on-change="true" value="EnableAxisArrowsInReplay" text="Enable Axis arrows in Replays"/>
+  </horizontal>
+  <text text="More Details: www.git.io/JzHPy"/>
 </settings-container>

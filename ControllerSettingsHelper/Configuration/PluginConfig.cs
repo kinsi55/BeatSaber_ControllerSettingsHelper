@@ -7,7 +7,7 @@ namespace ControllerSettingsHelper {
     public static Config Instance { get; set; }
     public virtual bool EnableAxisArrowsInMenu { get; set; } = false;
     public virtual bool EnableAxisArrowsInReplay { get; set; } = false;
-    public virtual bool OverrideControllerOffset { get; set; } = false;
+    public virtual bool EnableAxisArrowsInPlay { get; set; } = false;
     public virtual bool MirrorZForLeft { get; set; } = false;
 
     /// <summary>

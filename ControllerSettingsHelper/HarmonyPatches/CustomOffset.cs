@@ -14,18 +14,10 @@ namespace ControllerSettingsHelper.HarmonyPatches {
 
     [HarmonyPriority(int.MinValue)]
     static bool Prefix(XRNode node, Transform transform, Vector3 position, ref Vector3 rotation) {
-      if (Config.Instance.MirrorZForLeft && node == XRNode.LeftHand)
+      if (Config.Instance.MirrorZForLeft && node == XRNode.LeftHand) {
         rotation.z = -rotation.z;
-
-      if (!Config.Instance.OverrideControllerOffset)
-        return true;
-
-      if (node != XRNode.LeftHand && node != XRNode.RightHand)
-        return false;
-
-      transform.Rotate(rotation);
-      transform.Translate(position);
-      return false;
+      }
+      return true;
     }
   }
 }

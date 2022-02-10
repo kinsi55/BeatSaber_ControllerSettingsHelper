@@ -40,12 +40,15 @@ namespace ControllerSettingsHelper {
     }
 
     public void OnActiveSceneChanged(Scene oldScene, Scene newScene) {
-      if (Config.Instance.EnableAxisArrowsInMenu && newScene.name == "MainMenu") {
-        SharedCoroutineStarter.instance.StartCoroutine(SpawnAxis(false));
+      var config = Config.Instance;
+      if (config.EnableAxisArrowsInMenu && newScene.name == "MainMenu") {
+        SharedCoroutineStarter.instance.StartCoroutine(SpawnAxis(inSong: false));
       }
 
-      if (Config.Instance.EnableAxisArrowsInReplay && newScene.name == "GameCore") {
-        SharedCoroutineStarter.instance.StartCoroutine(SpawnAxis(true));
+      if (newScene.name == "GameCore") {
+        if (config.EnableAxisArrowsInReplay || config.EnableAxisArrowsInPlay) {
+          SharedCoroutineStarter.instance.StartCoroutine(SpawnAxis(inSong: true));
+        }
       }
     }
 
@@ -53,8 +56,10 @@ namespace ControllerSettingsHelper {
       yield return 0;
       yield return new WaitForEndOfFrame();
 
-      if (inSong && !Scoresaber.IsInReplay()) {
-        yield break;
+      if (inSong) {
+        if (!Scoresaber.IsInReplay() && !Config.Instance.EnableAxisArrowsInPlay) {
+          yield break;
+        }
       }
 
       foreach (var c in Resources.FindObjectsOfTypeAll<VRController>()) {
