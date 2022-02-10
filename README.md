@@ -1,6 +1,10 @@
-# ControllerSettingsHelper
+# ControllerSettingsHelper (forked)
 
 Utility that contains various tools to help you find optimal controller settings
+
+## Difference between original one
+
+See [change log](./CHANGELOG.md).
 
 ## Install
 
